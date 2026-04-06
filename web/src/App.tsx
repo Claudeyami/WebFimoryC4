@@ -4,18 +4,18 @@ import { AuthProvider } from './hooks/useAuth';
 import { ThemeProvider } from './hooks/useTheme';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
-import Chatbot from './components/chatbot/Chatbot';
-import { HomePage } from './pages/HomePage';
+// import Chatbot from './components/chatbot/Chatbot';
+// import { HomePage } from './pages/HomePage';
 import { LoginPage } from './pages/auth/LoginPage';
 import { RegisterPage } from './pages/auth/RegisterPage';
 import { ForgotPasswordPage } from './pages/auth/ForgotPasswordPage';
 import { ResetPasswordPage } from './pages/auth/ResetPasswordPage';
-import ProfilePage from './pages/ProfilePage';
-import SettingsPage from './pages/SettingsPage';
-import FavoritesPage from './pages/FavoritesPage';
-import NotificationsPage from './pages/NotificationsPage';
-import WatchPage from './pages/WatchPage';
-import HistoryPage from './pages/HistoryPage';
+// import ProfilePage from './pages/ProfilePage';
+// import SettingsPage from './pages/SettingsPage';
+// import FavoritesPage from './pages/FavoritesPage';
+// import NotificationsPage from './pages/NotificationsPage';
+// import WatchPage from './pages/WatchPage';
+// import HistoryPage from './pages/HistoryPage';
 import AdminMoviesPage from './pages/AdminMoviesPage';
 import AdminStoriesPage from './pages/AdminStoriesPage';
 import AdminUsersPage from './pages/AdminUsersPage';
@@ -25,12 +25,12 @@ import AdminMovieStatsPage from './pages/AdminMovieStatsPage';
 import RoleUpgradePage from './pages/RoleUpgradePage';
 import StoryUploadPage from './pages/StoryUploadPage';
 import UserUploadPage from './pages/UserUploadPage';
-import { MoviesPage } from './pages/MoviesPage';
+// import { MoviesPage } from './pages/MoviesPage';
 import StoriesPage from './pages/StoriesPage';
 import StoryPage from './pages/StoryPage';
-import ReaderPage from './pages/Reader/ReaderPage';
-import CategoriesPage from './pages/CategoriesPage';
-import CategoryDetailPage from './pages/CategoryDetailPage';
+// import ReaderPage from './pages/Reader/ReaderPage';
+// import CategoriesPage from './pages/CategoriesPage';
+// import CategoryDetailPage from './pages/CategoryDetailPage';
 
 function App() {
   return (
@@ -61,19 +61,19 @@ function App() {
                     <Header />
                     <main className="flex-1">
                       <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/profile" element={<ProfilePage />} />
-                        <Route path="/settings" element={<SettingsPage />} />
-                        <Route path="/favorites" element={<FavoritesPage />} />
-                        <Route path="/history" element={<HistoryPage />} />
-                        <Route path="/notifications" element={<NotificationsPage />} />
-                        <Route path="/watch/:slug" element={<WatchPage />} />
-                        <Route path="/movies" element={<MoviesPage />} />
+                        {/* <Route path="/" element={<HomePage />} /> */}
+                        {/* <Route path="/profile" element={<ProfilePage />} /> */}
+                        {/* <Route path="/settings" element={<SettingsPage />} /> */}
+                        {/* <Route path="/favorites" element={<FavoritesPage />} /> */}
+                        {/* <Route path="/history" element={<HistoryPage />} /> */}
+                        {/* <Route path="/notifications" element={<NotificationsPage />} /> */}
+                        {/* <Route path="/watch/:slug" element={<WatchPage />} /> */}
+                        {/* <Route path="/movies" element={<MoviesPage />} /> */}
                         <Route path="/stories" element={<StoriesPage />} />
                         <Route path="/stories/:slug" element={<StoryPage />} />
-                        <Route path="/stories/:slug/read" element={<ReaderPage />} />
-                        <Route path="/categories" element={<CategoriesPage />} />
-                        <Route path="/categories/:slug" element={<CategoryDetailPage />} />
+                        {/* <Route path="/stories/:slug/read" element={<ReaderPage />} /> */}
+                        {/* <Route path="/categories" element={<CategoriesPage />} /> */}
+                        {/* <Route path="/categories/:slug" element={<CategoryDetailPage />} /> */}
                         {/* Admin */}
                         <Route path="/admin/movies" element={<AdminMoviesPage />} />
                         <Route path="/admin/stories" element={<AdminStoriesPage />} />
@@ -86,11 +86,11 @@ function App() {
                         <Route path="/upload/stories" element={<StoryUploadPage />} />
                         <Route path="/upload/movies" element={<UserUploadPage />} />
                         <Route path="/role-upgrade" element={<RoleUpgradePage />} />
-                        <Route path="*" element={<Navigate to="/" replace />} />
+                        <Route path="*" element={<Navigate to="/stories" replace />} />
                       </Routes>
                     </main>
                     <Footer />
-                    <Chatbot />
+                    {/* <Chatbot /> */}
                   </div>
                 }
               />

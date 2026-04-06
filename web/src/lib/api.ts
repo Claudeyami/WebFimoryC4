@@ -1,22 +1,26 @@
-﻿import { API_BASE } from "./config";
+﻿const API_BASE = 'http://localhost:3000/api'; // Adjust as needed
 
-export type ApiMovie = {
-  MovieID: number;
-  Title: string;
-  Slug: string;
-  PosterURL?: string;
-  Rating?: number;
-  ViewCount?: number;
-  UploaderName?: string;
-  UploaderRole?: string;
-  Status?: string;
-};
+class Api {
+  async get(endpoint: string) {
+    const res = await fetch(`${API_BASE}${endpoint}`);
+    if (!res.ok) throw new Error(`Failed to fetch ${endpoint}`);
+    return res.json();
+  }
 
-export async function fetchMovies(): Promise<ApiMovie[]> {
-  const res = await fetch(`${API_BASE}/movies`);
-  if (!res.ok) throw new Error("Failed to fetch movies");
-  return res.json();
+  async post(endpoint: string, data: any) {
+    const res = await fetch(`${API_BASE}${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error(`Failed to post ${endpoint}`);
+    return res.json();
+  }
+
+  // Add other methods as needed
 }
+
+export const api = new Api();
 
 export async function fetchCategories(): Promise<
   { CategoryID: number; CategoryName: string; Slug: string; Type: string }[]
